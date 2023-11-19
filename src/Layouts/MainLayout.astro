@@ -3,6 +3,7 @@ interface Props {
 	title:string;
 }
 const {title} = Astro.props;
+
 ---
 
 
@@ -13,7 +14,7 @@ const {title} = Astro.props;
 		<link
 			rel="icon"
 			type="image/svg+xml"
-			href="/Source-code-icon.svg"
+			href={`${import.meta.env.BASE_URL}/Source-code-icon.svg`}
 		/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
@@ -23,4 +24,10 @@ const {title} = Astro.props;
 		<slot/>
 	</body>
 </html>
+
+<style>
+body {
+	margin:0px;
+}
+</style>
 

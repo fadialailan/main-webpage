@@ -3,29 +3,47 @@ import MainLayout from "src/Layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Fadi Alailan">
-	<div class="color-loop">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-		<div>6</div>
+	<div class="top-level">
+		<div>
+			<h1>Me in 10 seconds</h1>
+			<p>
+				A Programmer who still does not know in what to specialise in,
+				so is trying out different aspects of programming.
+			</p>
+		</div>
+		<div>
+			<h1>Me in 5 minutes</h1>
+			<p>
+				Ok, this will be quite informal. Writing is not one of my strong
+				suites, I am mainly writing this because this is expected of me
+				as a profesional developer, but I never was the type to write on
+				social media
+			</p>
+		</div>
 	</div>
 </MainLayout>
 
 <style lang="scss">
-	$color_list: (#ff0000, #00ff00, #0000ff);
+	@import "src/styles/global";
+	// $color_list: (#ff0000, #00ff00, #0000ff);
+	$color_list: (#8275bd, #fe938c, #edaf97, #a0d2db, #bee7e8);
 
-	.color-loop {
+	.top-level div {
+		padding: 1rem $side-padding;
+	}
+
+	.color-loops {
 		& div {
 			margin: 0;
+			padding: 1rem $side-padding;
 
 			@for $i from 1 through length($color_list) {
 				&:nth-child(#{length($color_list)}n + #{$i}) {
-					background-color: nth($color_list, $i)
+					$color_value: nth($color_list, $i);
+					background-color: $color_value;
+					box-shadow: 0 0 1px 1px $color_value;
 				}
 			}
 		}
 	}
-
 </style>
