@@ -1,23 +1,31 @@
 ---
 import MainLayout from "src/Layouts/MainLayout.astro";
-
 ---
 
 <MainLayout title="Fadi Alailan">
 	<div class="color-loop">
-		<p>1</p>
-		<p>2</p>
-		<p>3</p>
-		<p>4</p>
-		<p>5</p>
-		<p>6</p>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
 	</div>
 </MainLayout>
 
-<style>
-	$color_count: 3;
+<style lang="scss">
+	$color_list: (#ff0000, #00ff00, #0000ff);
 
-	.color-loop p:nth-child($(color_count)n + 1) {
-		background-color: purple;
+	.color-loop {
+		& div {
+			margin: 0;
+
+			@for $i from 1 through length($color_list) {
+				&:nth-child(#{length($color_list)}n + #{$i}) {
+					background-color: nth($color_list, $i)
+				}
+			}
+		}
 	}
+
 </style>
