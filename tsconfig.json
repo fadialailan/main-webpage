@@ -6,9 +6,6 @@
       "src/*": [
         "./src/*"
       ],
-      "@Layouts/*": [
-        "src/Layouts/*"
-      ]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
