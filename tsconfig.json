@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "/home/fadi/Programming/javascript/main-webpage",
+    "baseUrl": ".",
     "paths": {
       "src/*": [
         "./src/*"
