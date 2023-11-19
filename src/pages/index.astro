@@ -1,16 +1,23 @@
 ---
+import MainLayout from "src/Layouts/MainLayout.astro";
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/Source-code-icon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Fadi Alailan</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Fadi Alailan">
+	<div class="color-loop">
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+	</div>
+</MainLayout>
+
+<style>
+	$color_count: 3;
+
+	.color-loop p:nth-child($(color_count)n + 1) {
+		background-color: purple;
+	}
+</style>
