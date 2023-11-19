@@ -1,17 +1,25 @@
 ---
 import MainLayout from "src/Layouts/MainLayout.astro";
+import Navbar from "src/Components/Navbar.astro"
+
 ---
 
 <MainLayout title="Fadi Alailan">
-	<div class="top-level">
+	<Navbar/>
+	<div class="color-loop">
 		<div>
+			<h2>If you do not like the colors, feel free to turn them of</h2>
+			<label ><b>hide colors</b></label>
+			<input type="checkbox" id="show-colors"/>
+		</div>
+		<div id="me-10-sec">
 			<h1>Me in 10 seconds</h1>
 			<p>
 				A Programmer who still does not know in what to specialise in,
 				so is trying out different aspects of programming.
 			</p>
 		</div>
-		<div>
+		<div id="me-5-min">
 			<h1>Me in 5 minutes</h1>
 			<p>
 				Ok, this will be quite informal. Writing is not one of my strong
@@ -25,21 +33,19 @@ import MainLayout from "src/Layouts/MainLayout.astro";
 
 <style lang="scss">
 	@import "src/styles/global";
-	// $color_list: (#ff0000, #00ff00, #0000ff);
-	$color_list: (#8275bd, #fe938c, #edaf97, #a0d2db, #bee7e8);
 
 	.top-level div {
 		padding: 1rem $side-padding;
 	}
 
-	.color-loops {
+	.color-loop {
 		& div {
 			margin: 0;
 			padding: 1rem $side-padding;
 
 			@for $i from 1 through length($color_list) {
 				&:nth-child(#{length($color_list)}n + #{$i}) {
-					$color_value: nth($color_list, $i);
+					$color_value: var(--bgcolor, nth($color_list, $i));
 					background-color: $color_value;
 					box-shadow: 0 0 1px 1px $color_value;
 				}
@@ -47,3 +53,25 @@ import MainLayout from "src/Layouts/MainLayout.astro";
 		}
 	}
 </style>
+
+<script>
+	const root_element = document.documentElement;
+	const hide_colors_tickbox:HTMLInputElement | null =  document.getElementById("show-colors") as HTMLInputElement | null
+	if (root_element && hide_colors_tickbox) {
+		hide_colors_tickbox.checked = false
+
+		hide_colors_tickbox?.addEventListener("change", () => {
+			if (hide_colors_tickbox.checked) {
+				root_element.style.setProperty("--bgcolor", "#fff");
+			} else {
+				root_element.style.removeProperty("--bgcolor");
+			}
+		})
+	}
+
+		// console.log(
+		// 	getComputedStyle(root_element).getPropertyValue("--bgcolor"),
+		// );
+		// root_element.style.removeProperty("--bgcolor")
+		// root_element.style.setProperty("--bgcolor", "#fff");
+</script>

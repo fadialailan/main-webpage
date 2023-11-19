@@ -1,10 +1,16 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "/home/fadi/Programming/javascript/main-webpage",
     "paths": {
-      "src/*": ["./src/*"],
-      "@Layouts/*": ["src/Layouts/*"],
-    }
-  },
+      "src/*": [
+        "./src/*"
+      ],
+      "@Layouts/*": [
+        "src/Layouts/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
 }
