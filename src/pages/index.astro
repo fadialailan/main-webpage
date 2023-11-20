@@ -1,30 +1,115 @@
 ---
 import MainLayout from "src/Layouts/MainLayout.astro";
-import Navbar from "src/Components/Navbar.astro"
+import Navbar from "src/Components/Navbar.astro";
+import { about_url } from "src/scripts/links";
 ---
 
 <MainLayout title="Fadi Alailan">
-	<Navbar/>
+	<Navbar />
 	<div class="color-loop">
 		<div>
 			<h2>If you do not like the colors, feel free to turn them of</h2>
-			<label ><b>hide colors</b></label>
-			<input type="checkbox" id="show-colors"/>
+			<label><b>hide colors</b></label>
+			<input type="checkbox" id="show-colors" />
 		</div>
-		<div id="me-10-sec">
-			<h1>Me in 10 seconds</h1>
+		<div>
+			<h1>Me in 5 seconds</h1>
 			<p>
 				A Programmer who still does not know in what to specialise in,
 				so is trying out different aspects of programming.
 			</p>
 		</div>
-		<div id="me-5-min">
+		<div>
 			<h1>Me in 5 minutes</h1>
 			<p>
-				Ok, this will be quite informal. Writing is not one of my strong
-				suites, I am mainly writing this because this is expected of me
-				as a profesional developer, but I never was the type to write on
-				social media
+				Read my <a href={about_url}>about page</a>
+			</p>
+		</div>
+		<div>
+			<h1>Aim of the website</h1>
+			<p>
+				This website was made because it is somewhat expected from a
+				developer to have one in this day and age, and I used this
+				website as a project to try out Astro js and Sass (the rotating
+				colour pallet is thanks to Sass)
+			</p>
+		</div>
+		<div>
+			<h1>Why the rotating colours</h1>
+			<p>
+				I was thinking at first about a design where each section of the
+				website will have its own colour, but the idea of manually
+				setting the colour of each section did not set right with me, so
+				I though about a way to automate this, and that is when the idea
+				of rotating colours popped, but how do I do this?
+			</p>
+			<p>
+				CSS has the nth-element selector but I still need to manully do
+				it for each one, I wanted an easy system where I provide a list
+				of colours and it rotates between them but normal CSS can not do
+				that, so I search for ways to have a for loop in CSS and that is
+				where I found Sass. I should mention that I worked with Sass in
+				my one of previous jobs but I did not use it my self, it was
+				used in parts of the codebase writing years ago and I was
+				intructed not to use it.
+			</p>
+			<p>
+				So this makes it a good opertunity to use Sass, and so I wrote
+				the code for it and now my website's colours are that of a
+				cotton candy ice cream.
+			</p>
+		</div>
+		<div>
+			<h1>Plans for the website</h1>
+			<p>There are few things that I can make of the website</p>
+		</div>
+		<div>
+			<h2>I can start blogging</h2>
+			<p>
+				Okay, this idea is intresting but as I mentioned in my About
+				page, writing is not one of my strong suits, and I can see
+				myself getting bored of this website and blogging quickly. and I
+				am not sure what to blog about anyway. If I ever do it I will
+				most likely be one of those guys who writing a blog once or
+				twice a year about something intresting he found that he wants
+				to share with others or promote it.
+			</p>
+		</div>
+		<div>
+			<h2>
+				I can showcase the projects that I worked on (portfolio
+				website)
+			</h2>
+			<p>
+				This is a common thing that is done by developers who make a
+				personal website, especially web developers, but there are a few
+				issues with that when it comes to my case.
+			</p>
+			<p>
+				Most applications I write are CLI (command line interface)
+				applications, it is rare that I need a GUI (graphical user
+				interface). but these portfolio website mainly show web
+				applications, so they can not show CLI or desktop GUI
+				applications (e.g. application writin using GTK or QT)
+			</p>
+			<p>
+				The only decent way I can think of to show them is to write a
+				blog post about them, but that has the same issues mentioned in
+				the blogging sectiona and honestly I strugle to even write
+				something in my projects README.md files, so I do not see my
+				self commiting to this. Futhermore most recruiters do not want
+				to download something, if it is not a website then they will not
+				bother, this could be for security or due to time.
+			</p>
+			<p>
+				Okay, I mentoned the practical reasons, now for something a bit
+				more personal. I did not write the projects on my Github so that
+				I please recruiters, I wrote them for myself. It could have been
+				for learning or an automation script, but it was rare that I
+				wrote them to please recruiters, I only started uploading on
+				Github when I was at University so that I can find an internship
+				and I needed a Github account to show I have skills when I did
+				not have any work experince
 			</p>
 		</div>
 	</div>
@@ -32,10 +117,6 @@ import Navbar from "src/Components/Navbar.astro"
 
 <style lang="scss">
 	@import "src/styles/global";
-
-	.top-level div {
-		padding: 1rem $side-padding;
-	}
 
 	.color-loop {
 		& div {
@@ -55,9 +136,10 @@ import Navbar from "src/Components/Navbar.astro"
 
 <script>
 	const root_element = document.documentElement;
-	const hide_colors_tickbox:HTMLInputElement | null =  document.getElementById("show-colors") as HTMLInputElement | null
+	const hide_colors_tickbox: HTMLInputElement | null =
+		document.getElementById("show-colors") as HTMLInputElement | null;
 	if (root_element && hide_colors_tickbox) {
-		hide_colors_tickbox.checked = false
+		hide_colors_tickbox.checked = false;
 
 		hide_colors_tickbox?.addEventListener("change", () => {
 			if (hide_colors_tickbox.checked) {
@@ -65,6 +147,6 @@ import Navbar from "src/Components/Navbar.astro"
 			} else {
 				root_element.style.removeProperty("--bgcolor");
 			}
-		})
+		});
 	}
 </script>
