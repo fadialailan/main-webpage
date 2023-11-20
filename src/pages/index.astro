@@ -131,7 +131,6 @@ import { about_url } from "src/scripts/links";
 				&:nth-child(#{length($color_list)}n + #{$i}) {
 					$color_value: var(--bgcolor, nth($color_list, $i));
 					background-color: $color_value;
-					box-shadow: 0 0 1px 1px $color_value;
 				}
 			}
 		}

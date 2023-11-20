@@ -1,2 +1,2 @@
-$side-padding: calc((100vw - 60rem)/2);
+$side-padding: clamp(1rem,calc((100vw - 60rem)/2),30vw);
 $color_list: (#8275bd, #fe938c, #edaf97, #a0d2db, #bee7e8);
