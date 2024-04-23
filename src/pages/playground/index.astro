@@ -1,0 +1,12 @@
+---
+import { type AstroInstance } from "astro"
+const result:(AstroInstance & {creation_date?:Date})[] = await Astro.glob("./*.astro")
+const rainbow = result[0]
+export const a = 1;
+console.log(result);
+console.log("a => ",rainbow.creation_date);
+
+---
+
+<div>
+</div>
