@@ -1,12 +1,17 @@
 ---
-import { type AstroInstance } from "astro"
-const result:(AstroInstance & {creation_date?:Date})[] = await Astro.glob("./*.astro")
-const rainbow = result[0]
-export const a = 1;
-console.log(result);
-console.log("a => ",rainbow.creation_date);
+import { type AstroInstance } from "astro";
+import MainLayout from "src/Layouts/MainLayout.astro";
+interface pages_type extends AstroInstance {
+	creation_date: Date;
+	title: string;
+}
+const result: pages_type[] = (await Astro.glob("./*.astro")) as pages_type[];
+
 
 ---
 
-<div>
-</div>
+<MainLayout title="playground">
+{result.map((value) => {
+	return <a href={value.url}>{value.title}</a>
+})}
+</MainLayout>
