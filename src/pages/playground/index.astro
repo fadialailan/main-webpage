@@ -1,12 +1,7 @@
 ---
-import { type AstroInstance } from "astro";
+import {type AstroPage } from "src/scripts/models.ts" 
 import MainLayout from "src/Layouts/MainLayout.astro";
-interface pages_type extends AstroInstance {
-	creation_date: Date;
-	title: string;
-}
-const result: pages_type[] = (await Astro.glob("./*.astro")) as pages_type[];
-
+const result: AstroPage[] = (await Astro.glob("./*.astro")) as AstroPage[];
 
 ---
 
