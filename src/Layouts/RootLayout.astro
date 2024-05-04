@@ -1,10 +1,11 @@
 ---
 import {icon_url} from "src/scripts/links"
 
-interface Props {
+export interface Props {
 	title:string;
+	class?:string;
 }
-const {title} = Astro.props;
+const {title, class:className, ...rest} = Astro.props;
 
 ---
 
@@ -22,7 +23,7 @@ const {title} = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class={className} {...rest}>
 		<slot/>
 	</body>
 </html>

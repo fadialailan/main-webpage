@@ -2,9 +2,16 @@
 // const home_url = import.meta.env.BASE_URL + "/"
 // const about_url = import.meta.env.BASE_URL + "/about"
 import { home_url, about_url, cv_url, contact_url } from "src/scripts/links";
+export interface Props {
+	class?: string;
+}
+
+const {class:className, ...rest} = Astro.props;
+
+
 ---
 
-<nav>
+<nav class={className} {...rest}>
 	<ul>
 		<li><a href={home_url}>Home</a></li>
 		<li><a href={about_url}>About</a></li>
