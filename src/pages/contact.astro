@@ -1,5 +1,5 @@
 ---
-import MainLayout from "src/Layouts/MainLayout.astro";
+import UnstyledBaseLayout from "src/Layouts/UnstyledBaseLayout.astro";
 import ProfileImage from "src/Components/ProfileImage.astro";
 import {
 	email_url,
@@ -10,7 +10,7 @@ import {
 } from "src/scripts/links";
 ---
 
-<MainLayout title="Contact">
+<UnstyledBaseLayout title="Contact">
 	<div id="main-div">
 		<ProfileImage/>
 		<h1>Contacts</h1>
@@ -22,7 +22,7 @@ import {
 		<p>GitLab: <a href={gitlab_link}>fadialailan</a></p>
 		<p>LinkedIn: <a href={linkedin_link}>fadi-alailan</a></p>
 	</div>
-</MainLayout>
+</UnstyledBaseLayout>
 
 <style lang="scss">
 	@import "src/styles/global";

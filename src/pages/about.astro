@@ -1,9 +1,9 @@
 ---
-import MainLayout from "src/Layouts/MainLayout.astro";
+import UnstyledBaseLayout from "src/Layouts/UnstyledBaseLayout.astro";
 import ProfileImage from "src/Components/ProfileImage.astro";
 ---
 
-<MainLayout title="About">
+<UnstyledBaseLayout title="About">
 	<div id="main-div">
 		<ProfileImage />
 		<h1>About me</h1>
@@ -51,7 +51,7 @@ import ProfileImage from "src/Components/ProfileImage.astro";
 			free online resources (mainly YouTube).
 		</p>
 	</div>
-</MainLayout>
+</UnstyledBaseLayout>
 
 <style lang="scss">
 	@import "src/styles/global";

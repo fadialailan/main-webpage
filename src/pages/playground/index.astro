@@ -1,12 +1,12 @@
 ---
 import {type AstroPage } from "src/scripts/models.ts" 
-import MainLayout from "src/Layouts/MainLayout.astro";
+import UnstyledBaseLayout from "src/Layouts/UnstyledBaseLayout.astro";
 const result: AstroPage[] = (await Astro.glob("./*.astro")) as AstroPage[];
 
 ---
 
-<MainLayout title="playground">
+<UnstyledBaseLayout title="playground">
 {result.map((value) => {
 	return <a href={value.url}>{value.title}</a>
 })}
-</MainLayout>
+</UnstyledBaseLayout>
