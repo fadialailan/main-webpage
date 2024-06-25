@@ -1,5 +1,5 @@
 ---
-import UnstyledBaseLayout from "src/Layouts/UnstyledBaseLayout.astro";
+import MainLayout from "src/Layouts/MainLayout.astro";
 import ProfileImage from "src/Components/ProfileImage.astro";
 import {
 	email_url,
@@ -10,32 +10,14 @@ import {
 } from "src/scripts/links";
 ---
 
-<UnstyledBaseLayout title="Contact">
-	<div id="main-div">
-		<ProfileImage/>
-		<h1>Contacts</h1>
-		<p>email: <a href={email_url}>{email_address}</a></p>
-		<p class="no-margin">phone: +966 54 665 1007</p>
-		<p class="no-margin">Feel free to contact me on WhatsApp or Signal.</p>
-		<h1>Social links</h1>
-		<p>GitHub: <a href={github_link}>fadialailan</a></p>
-		<p>GitLab: <a href={gitlab_link}>fadialailan</a></p>
-		<p>LinkedIn: <a href={linkedin_link}>fadi-alailan</a></p>
-	</div>
-</UnstyledBaseLayout>
-
-<style lang="scss">
-	@import "src/styles/global";
-
-	img {
-		float: right;
-	}
-
-	.no-margin {
-		margin: 0px;
-	}
-
-	#main-div {
-		padding: 0.1px $side-padding;
-	}
-</style>
+<MainLayout title="Contact">
+	<ProfileImage />
+	<h1>Contacts</h1>
+	<p>email: <a href={email_url}>{email_address}</a></p>
+	<p class="no-margin">phone: +966 54 665 1007</p>
+	<p class="no-margin">Feel free to contact me on WhatsApp or Signal.</p>
+	<h1>Social links</h1>
+	<p>GitHub: <a href={github_link}>fadialailan</a></p>
+	<p>GitLab: <a href={gitlab_link}>fadialailan</a></p>
+	<p>LinkedIn: <a href={linkedin_link}>fadi-alailan</a></p>
+</MainLayout>

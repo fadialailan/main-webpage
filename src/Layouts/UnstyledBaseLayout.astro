@@ -6,15 +6,18 @@ export interface Props {
 	title:string;
 	class?:string;
 	navbar_class?:string;
+	main_slot_class?:string;
 }
 
-const {title, class:className, navbar_class, ...rest} = Astro.props;
+const {title, class:className, navbar_class, main_slot_class, ...rest} = Astro.props;
 
 ---
 
 <RootLayout class={className} title={title} {...rest}>
-	<Navbar/>
-	<slot/>
+	<Navbar class={navbar_class} {...rest}/>
+	<div class={main_slot_class} {...rest}>
+		<slot class={main_slot_class}/>
+	</div>
 </RootLayout>
 
 
