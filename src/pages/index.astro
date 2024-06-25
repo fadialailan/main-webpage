@@ -4,111 +4,76 @@ import { about_url } from "src/scripts/links";
 ---
 
 <MainLayout title="Fadi Alailan">
-	<div>
-		<h1>Me in 5 seconds</h1>
-		<p>
-			A Programmer who still does not know what to specialise in, so is
-			trying out different aspects of programming.
-		</p>
-	</div>
-	<div>
-		<h1>Me in 5 minutes</h1>
-		<p>
-			Read my "<a href={about_url}>about page</a>".
-		</p>
-	</div>
-	<div>
-		<h1>Aim of the website</h1>
-		<p>
-			This website was made because it is somewhat expected from a
-			developer to have one in this day and age, and I used this website
-			as a project to try out Astro js and Sass (the rotating colour
-			pallet is thanks to Sass).
-		</p>
-	</div>
-	<div>
-		<h1>Why the rotating colours</h1>
-		<p>
-			I was thinking at first about a design where each section of the
-			website will have its colour, but the idea of manually setting the
-			colour of each section did not work right for me, so I thought about
-			a way to automate this, and that is when the idea of rotating
-			colours popped, but how do I do this?
-		</p>
-		<p>
-			CSS has the nth-element selector but I still need to manually do it
-			for each one, I wanted an easy system where I provide a list of
-			colours and it rotates between them but normal CSS can not do that,
-			so I searched for ways to have a for loop in CSS and that is where I
-			found Sass. I should mention that I worked with Sass in my one of my
-			previous jobs but I did not use it myself, it was used in parts of
-			the codebase writing years ago and I was instructed not to use it.
-		</p>
-		<p>
-			So this makes it a good opportunity to use Sass, and so I wrote the
-			code for it and now my website's colours are that of a cotton candy
-			ice cream.
-		</p>
-		<p>
-			I should mention that one of the colours repeats more than others,
-			this it done intentionally to prevent a sudden change in luminance.
-		</p>
-	</div>
-	<div>
-		<h1>Plans for the website</h1>
-		<p>There are few things that I can make of the website.</p>
-	</div>
-	<div>
-		<h2>I can start blogging</h2>
-		<p>
-			Okay, this idea is interesting but as I mentioned in my About page,
-			writing is not one of my strong suits, and I can see myself getting
-			bored of this website and blogging quickly. and I am not sure what
-			to blog about anyway. If I ever do it I will most likely be one of
-			those guys who write a blog once or twice a year about something
-			interesting he found that he wants to share with others or promote
-			it.
-		</p>
-	</div>
-	<div>
-		<h2>
-			I can showcase the projects that I worked on (portfolio website)
-		</h2>
-		<p>
-			This is a common thing that is done by developers who make a
-			personal website, especially web developers, but there are a few
-			issues with that when it comes to my case.
-		</p>
-		<p>
-			Most applications I write are CLI (command line interface)
-			applications, it is rare that I need a GUI (graphical user
-			interface). but these portfolio websites mainly show web
-			applications, so they can not show CLI or desktop GUI applications
-			(e.g. application written using GTK or QT).
-		</p>
-		<p>
-			The only decent way I can think of to show them is to write a blog
-			post about them, but that has the same issues mentioned in the
-			blogging section and honestly I struggle to even write something in
-			my project's README.md files, so I do not see my self committing to
-			this. Furthermore, most recruiters do not want to download
-			something, so if it is not a website then they will not bother, this
-			could be for security or due to time.
-		</p>
-		<p>
-			Okay, I mentioned the practical reasons, now for something a bit
-			more personal. I did not write the projects on my GitHub so that I
-			please recruiters, I wrote them for myself. It could have been for
-			learning or an automation script, but it was rare that I wrote them
-			to please recruiters, I only started uploading them on GitHub when I
-			was at University so that I could find an internship and I needed a
-			GitHub account to show I had skills when I did not have any work
-			experience.
-		</p>
-		<p>
-			But you know, I need to pay the bills, so It is not unlikely for me
-			to one day show projects on here that are there just to please
-			recruiters.
-		</p>
-	</div>
+	<h1>Me in 5 seconds</h1>
+	<p>
+		A Programmer who still does not know what to specialise in, so is trying
+		out different aspects of programming.
+	</p>
+	<h1>Me in 5 minutes</h1>
+	<p>
+		Read my "<a href={about_url}>about page</a>".
+	</p>
+	<h1>Aim of the website</h1>
+	<p>
+		This website was made because it is somewhat expected from a developer
+		to have one in this day and age, and I used this website as a project to
+		try out Astro js and Sass.
+	</p>
+	<h1>Why is the website so minimalist?</h1>
+	<p>
+		I am not a fan of very fancy websites, they cool for few minites, but
+		the animation starts to get in my way very quickly, minimalist websites
+		are easier to navigate in my experince.
+	</p>
+	<p>
+		They also come with the advantage of using less resources, but nowdays
+		most computers can handle animation heavy websites (with some exceptions
+		like the <a href="https://webglsamples.org/aquarium/aquarium.html">WebGL Aquarium</a>).
+	</p>
+	<h1>Plans for the website</h1>
+	<p>There are few things that I can make of the website.</p>
+	<h2>I can start blogging</h2>
+	<p>
+		Okay, this idea is interesting but as I mentioned in my About page,
+		writing is not one of my strong suits, and I can see myself getting
+		bored of this website and blogging quickly. and I am not sure what to
+		blog about anyway. If I ever do it I will most likely be one of those
+		guys who write a blog once or twice a year about something interesting
+		he found that he wants to share with others or promote it.
+	</p>
+	<h2>I can showcase the projects that I worked on (portfolio website)</h2>
+	<p>
+		This is a common thing that is done by developers who make a personal
+		website, especially web developers, but there are a few issues with that
+		when it comes to my case.
+	</p>
+	<p>
+		Most applications I write are CLI (command line interface) applications,
+		it is rare that I need a GUI (graphical user interface). but these
+		portfolio websites mainly show web applications, so they can not show
+		CLI or desktop GUI applications (e.g. application written using GTK or
+		QT).
+	</p>
+	<p>
+		The only decent way I can think of to show them is to write a blog post
+		about them, but that has the same issues mentioned in the blogging
+		section and honestly I struggle to even write something in my project's
+		README.md files, so I do not see my self committing to this.
+		Furthermore, most recruiters do not want to download something, so if it
+		is not a website then they will not bother, this could be for security
+		or due to time.
+	</p>
+	<p>
+		Okay, I mentioned the practical reasons, now for something a bit more
+		personal. I did not write the projects on my GitHub so that I please
+		recruiters, I wrote them for myself. It could have been for learning or
+		an automation script, but it was rare that I wrote them to please
+		recruiters, I only started uploading them on GitHub when I was at
+		University so that I could find an internship and I needed a GitHub
+		account to show I had skills when I did not have any work experience.
+	</p>
+	<p>
+		But you know, I need to pay the bills, so it is not unlikely for me to
+		one day show projects on here that are there just to please recruiters.
+	</p>
 </MainLayout>
