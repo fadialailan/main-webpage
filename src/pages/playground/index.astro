@@ -7,8 +7,16 @@ const result: AstroPage[] = (await Astro.glob("./*.astro")) as AstroPage[];
 <UnstyledBaseLayout title="playground">
 	<div class="main-div">
 		{
-			result.map((value) => {
-				return <a href={value.url}>{value.title}</a>;
+		result.sort((page1, page2) => {
+		//@ts-ignore
+		return page1.creation_date - page2.creation_date;
+		}).map((value) => {
+				return (
+					<div class="row-div">
+						<a href={value.url}>{value.title}</a>
+						<span>{value.creation_date.toLocaleDateString()}</span>
+					</div>
+				);
 			})
 		}
 	</div>
@@ -18,5 +26,10 @@ const result: AstroPage[] = (await Astro.glob("./*.astro")) as AstroPage[];
 	@import "src/styles/global";
 	.main-div {
 		padding: 1rem $side_padding;
+	}
+
+	.row-div {
+		display: flex;
+		justify-content: space-between
 	}
 </style>
