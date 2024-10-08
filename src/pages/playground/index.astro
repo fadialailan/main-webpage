@@ -1,35 +1,45 @@
 ---
 import { type AstroPage } from "src/scripts/models.ts";
-import UnstyledBaseLayout from "src/Layouts/UnstyledBaseLayout.astro";
+import MainLayout from "src/Layouts/MainLayout.astro";
 const result: AstroPage[] = (await Astro.glob("./*.astro")) as AstroPage[];
 ---
 
-<UnstyledBaseLayout title="playground">
+<MainLayout title="playground">
 	<div class="main-div">
+		<h1>What is this page?</h1>
+		<p>
+			this is a page containing some random stuff I used to have on my
+			website
+		</p>
+		<hr />
 		{
-		result.sort((page1, page2) => {
-		//@ts-ignore
-		return page1.creation_date - page2.creation_date;
-		}).map((value) => {
-				return (
-					<div class="row-div">
-						<a href={value.url}>{value.title}</a>
-						<span>{value.creation_date.toLocaleDateString()}</span>
-					</div>
-				);
-			})
+			result
+				.sort((page1, page2) => {
+					//@ts-ignore
+					return page1.creation_date - page2.creation_date;
+				})
+				.map((value) => {
+					return (
+						<div class="row-div">
+							<a href={value.url}>{value.title}</a>
+							<span>
+								{value.creation_date.toLocaleDateString()}
+							</span>
+						</div>
+					);
+				})
 		}
 	</div>
-</UnstyledBaseLayout>
+</MainLayout>
 
 <style lang="scss">
 	@import "src/styles/global";
-	.main-div {
-		padding: 1rem $side_padding;
-	}
+	// .main-div {
+	// 	padding: 1rem $side_padding;
+	// }
 
 	.row-div {
 		display: flex;
-		justify-content: space-between
+		justify-content: space-between;
 	}
 </style>
