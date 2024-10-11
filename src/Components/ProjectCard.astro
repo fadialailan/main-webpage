@@ -1,0 +1,12 @@
+---
+import { type AstroProjectPage } from "src/scripts/models.ts";
+export interface Props {
+	project_page: AstroProjectPage;
+}
+
+const { project_page } = Astro.props;
+---
+
+<div>
+	<h2>{project_page.title}</h2>
+</div>

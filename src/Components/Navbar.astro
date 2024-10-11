@@ -1,7 +1,7 @@
 ---
 // const home_url = import.meta.env.BASE_URL + "/"
 // const about_url = import.meta.env.BASE_URL + "/about"
-import { home_url, about_url, cv_url, contact_url, playground_url } from "src/scripts/links";
+import { home_url, about_url, cv_url, contact_url, playground_url, projects_url } from "src/scripts/links";
 export interface Props {
 	class?: string;
 }
@@ -17,6 +17,7 @@ const {class:className, ...rest} = Astro.props;
 		<li><a href={about_url}>About</a></li>
 		<li><a href={contact_url}>Contact</a></li>
 		<li><a href={playground_url}>playground</a></li>
+		<li><a href={projects_url}>projects</a></li>
 		<li>
 			<a href={cv_url} target="_blank" rel="noopener noreferrer">CV</a>
 		</li>

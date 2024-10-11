@@ -6,6 +6,7 @@ export const home_url = base_url + ""
 export const about_url = base_url + "about"
 export const contact_url = base_url + "contact"
 export const playground_url = base_url + "playground"
+export const projects_url = base_url + "projects"
 
 // resource url
 export const icon_url = base_url + "Source-code-icon.svg"

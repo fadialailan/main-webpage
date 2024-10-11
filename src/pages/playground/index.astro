@@ -1,7 +1,9 @@
 ---
-import { type AstroPage } from "src/scripts/models.ts";
+import { type AstroPlaygroundPage } from "src/scripts/models.ts";
 import MainLayout from "src/Layouts/MainLayout.astro";
-const result: AstroPage[] = (await Astro.glob("./*.astro")) as AstroPage[];
+
+// Astro.glob does not include the calling file
+const playground_pages: AstroPlaygroundPage[] = (await Astro.glob("./*.astro")) as AstroPlaygroundPage[];
 ---
 
 <MainLayout title="playground">
@@ -13,7 +15,7 @@ const result: AstroPage[] = (await Astro.glob("./*.astro")) as AstroPage[];
 		</p>
 		<hr />
 		{
-			result
+			playground_pages
 				.sort((page1, page2) => {
 					//@ts-ignore
 					return page1.creation_date - page2.creation_date;
