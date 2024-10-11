@@ -18,13 +18,13 @@ const { title } = Astro.props;
 </UnstyledBaseLayout>
 
 <style lang="scss">
-	$side-padding: clamp(1rem, calc((100vw - 60rem) / 2), 30vw);
+	@import "src/styles/global";
 
 	.base-layout-class {
 		padding: 0rem $side-padding;
 	}
 	.page-class {
-		background: #fdebf3;
+		background: $primary_color;
 	}
 
 	.navbar-class {

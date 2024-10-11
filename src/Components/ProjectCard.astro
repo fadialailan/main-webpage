@@ -10,3 +10,14 @@ const { project_page } = Astro.props;
 <div>
 	<h2>{project_page.title}</h2>
 </div>
+
+<style lang="scss">
+	@import "src/styles/global";
+
+	div {
+		background: $secondary_color;
+		&:hover {
+			background: $third_color;
+		}
+	}
+</style>
