@@ -1,8 +1,13 @@
 ---
+import ProjectCard from "src/Components/ProjectCard.astro";
 import MainLayout from "src/Layouts/MainLayout.astro";
+import type { AstroProjectPage } from "src/scripts/models";
 
+const project_pages: AstroProjectPage[] = (await Astro.glob("./*.astro")) as AstroProjectPage[];
 ---
 
 <MainLayout title="Projects">
-	<h1>Projects</h1>
+	{project_pages.map((project_page) => {
+		return <ProjectCard project_page={project_page}/>
+	})}
 </MainLayout>

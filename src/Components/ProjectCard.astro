@@ -7,17 +7,27 @@ export interface Props {
 const { project_page } = Astro.props;
 ---
 
-<div>
+<a href={project_page.url}>
 	<h2>{project_page.title}</h2>
-</div>
+	<p>{project_page.description}</p>
+</a>
 
 <style lang="scss">
 	@import "src/styles/global";
 
-	div {
+	a {
+		color: black;
+		text-decoration: inherit;
+		display: block;
+
+		margin: 1rem;
+		// border-radius: 2rem;
+		padding: 0.1rem 2rem;
+		
 		background: $secondary_color;
 		&:hover {
 			background: $third_color;
 		}
 	}
+
 </style>
