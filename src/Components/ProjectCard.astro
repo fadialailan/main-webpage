@@ -24,9 +24,15 @@ const { project_page } = Astro.props;
 		// border-radius: 2rem;
 		padding: 0.1rem 2rem;
 		
-		background: $secondary_color;
+		background: $primary_color3;
+		// transition-property: background;
+		transition-duration: 700ms;
+		border-radius: 1rem;
 		&:hover {
-			background: $third_color;
+			transition-duration: 300ms;
+			transition-property: background border-radius;
+			background: $primary_color4;
+			scale: 1.2;
 		}
 	}
 
