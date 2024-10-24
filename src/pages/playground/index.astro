@@ -17,8 +17,10 @@ const playground_pages: AstroPlaygroundPage[] = (await Astro.glob("./*.astro")) 
 		{
 			playground_pages
 				.sort((page1, page2) => {
-					//@ts-ignore
-					return page1.creation_date - page2.creation_date;
+					const page1_time = page1.creation_date.valueOf();
+					const page2_time = page2.creation_date.valueOf();
+					
+					return page1_time - page2_time;
 				})
 				.map((value) => {
 					return (
