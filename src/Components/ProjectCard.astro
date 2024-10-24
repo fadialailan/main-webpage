@@ -21,18 +21,19 @@ const { project_page } = Astro.props;
 		display: block;
 
 		margin: 1rem;
-		// border-radius: 2rem;
 		padding: 0.1rem 2rem;
 		
 		background: $primary_color3;
-		// transition-property: background;
-		transition-duration: 700ms;
+		@media (prefers-reduced-motion:no-preference) {
+		transition-property: background, border-radius, scale;
+		transition-duration: 500ms;
+		}
 		border-radius: 1rem;
 		&:hover {
-			transition-duration: 300ms;
-			transition-property: background border-radius;
+			@media (prefers-reduced-motion:no-preference) {
+				scale: 1.2;
+			}
 			background: $primary_color4;
-			scale: 1.2;
 		}
 	}
 
