@@ -1,4 +1,5 @@
 ---
+import MainLayout from "src/Layouts/MainLayout.astro";
 import { RepositoryType, RepositoryLocation } from "src/scripts/models";
 export const title = "Pixel Art Scaler";
 export const description = `
@@ -8,3 +9,7 @@ export const repository_page_url = "https://github.com/fadialailan/pixel-art-sca
 export const repository_type = RepositoryType.GIT_REPO
 export const repository_location = RepositoryLocation.GITHUB;
 ---
+
+<MainLayout title={title}>
+
+</MainLayout>
