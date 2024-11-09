@@ -1,17 +1,15 @@
 ---
 import ProjectCard from "src/Components/ProjectCard.astro";
 import MainLayout from "src/Layouts/MainLayout.astro";
-import type { AstroProjectPage } from "src/scripts/models";
-import { getCollection, getEntry } from 'astro:content';
+import { getCollection, getEntry } from "astro:content";
 
-const all_projects = await getCollection('projects');
-console.log(all_projects)
-
-const project_pages: AstroProjectPage[] = (await Astro.glob("./*.astro")) as AstroProjectPage[];
+const all_projects = await getCollection("projects");
 ---
 
 <MainLayout title="Projects">
-	{project_pages.map((project_page) => {
-		return <ProjectCard project_page={project_page}/>
-	})}
+	{
+		all_projects.map((project_page) => {
+			return <ProjectCard project_page={project_page.data} />;
+		})
+	}
 </MainLayout>

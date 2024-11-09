@@ -14,12 +14,4 @@ export interface AstroPlaygroundPage extends AstroInstance {
 	title: string;
 }
 
-export interface AstroProjectPage extends AstroInstance {
-  title: string;
-  description: string;
-  repository_page_url: string;
-  repository_type: RepositoryType;
-  repository_location: RepositoryLocation;
-}
-
 

@@ -1,13 +1,13 @@
 ---
-import { type AstroProjectPage } from "src/scripts/models.ts";
+import { type ProjectCollectionType } from "src/content/config";
 export interface Props {
-	project_page: AstroProjectPage;
+	project_page: ProjectCollectionType;
 }
 
 const { project_page } = Astro.props;
 ---
 
-<a href={project_page.url}>
+<a href={project_page.repository_page_url} target="_blank">
 	<h2>{project_page.title}</h2>
 	<p>{project_page.description}</p>
 </a>
