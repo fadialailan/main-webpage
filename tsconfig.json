@@ -9,6 +9,8 @@
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "strict": true
+    "strict": true,
+    "strictNullChecks":true
+
   }
 }
