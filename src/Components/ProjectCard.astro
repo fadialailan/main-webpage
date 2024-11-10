@@ -10,10 +10,30 @@ const { project_page } = Astro.props;
 <a href={project_page.repository_page_url} target="_blank">
 	<h2>{project_page.title}</h2>
 	<p>{project_page.description}</p>
+	<div>
+		<p
+			><span class="label">VCS</span> {
+				project_page.repository_type
+			}</p
+		>
+		<p
+			><span class="label">Platform</span> {
+				project_page.repository_location
+			}</p
+		>
+	</div>
 </a>
 
 <style lang="scss">
 	@import "src/styles/global";
+
+	.label {
+		color: white;
+		background-color: $primary_color5;
+		padding: 0.25rem;
+		border-radius: 0.5rem;
+		margin-right: 0.2rem
+	}
 
 	a {
 		color: black;
@@ -22,19 +42,18 @@ const { project_page } = Astro.props;
 
 		margin: 2rem;
 		padding: 0.1rem 2rem;
-		
+
 		background: $primary_color3;
-		@media (prefers-reduced-motion:no-preference) {
-		transition-property: background, border-radius, scale;
-		transition-duration: 300ms;
+		@media (prefers-reduced-motion: no-preference) {
+			transition-property: background, border-radius, scale;
+			transition-duration: 300ms;
 		}
 		border-radius: 1rem;
 		&:hover {
-			@media (prefers-reduced-motion:no-preference) {
+			@media (prefers-reduced-motion: no-preference) {
 				scale: 1.1;
 			}
 			background: $primary_color4;
 		}
 	}
-
 </style>
