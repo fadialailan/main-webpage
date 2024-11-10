@@ -11,16 +11,14 @@ const { project_page } = Astro.props;
 	<h2>{project_page.title}</h2>
 	<p>{project_page.description}</p>
 	<div>
-		<p
-			><span class="label">VCS</span> {
-				project_page.repository_type
-			}</p
-		>
-		<p
-			><span class="label">Platform</span> {
-				project_page.repository_location
-			}</p
-		>
+		<p><span class="label">VCS</span> {project_page.repository_type}</p>
+		<p>
+			<span class="label">Platform</span>
+			{project_page.repository_location}
+		</p>
+		<p class="stack">
+			<span class="label">Stack</span>C++, Cmake, CLI11, ImageMagick, FMT
+		</p>
 	</div>
 </a>
 
@@ -32,13 +30,20 @@ const { project_page } = Astro.props;
 		background-color: $primary_color5;
 		padding: 0.25rem;
 		border-radius: 0.5rem;
-		margin-right: 0.2rem
+		margin-right: 0.2rem;
+	}
+
+	p.stack {
+		grid-column: span 2;
+		line-height: 2rem;
 	}
 
 	a {
 		color: black;
 		text-decoration: inherit;
 		display: block;
+		border: 0;
+		-webkit-appearance: none;
 
 		margin: 2rem;
 		padding: 0.1rem 2rem;
@@ -55,5 +60,19 @@ const { project_page } = Astro.props;
 			}
 			background: $primary_color4;
 		}
+
+		div {
+			@media (min-width: 40em) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				p {
+					margin: 0.5rem 0;
+				}
+			}
+		}
 	}
 </style>
+
+<script>
+	class ProjectCardC extends HTMLButtonElement {}
+</script>
