@@ -7,6 +7,7 @@ const all_projects = await getCollection("projects");
 ---
 
 <MainLayout title="Projects">
+	<p>Clicking on this projects will take you to where they are hosted</p>
 	{
 		all_projects.map((project_page) => {
 			return <ProjectCard project_page={project_page.data} />;

@@ -7,7 +7,7 @@ export interface Props {
 const { project_page } = Astro.props;
 ---
 
-<a href={project_page.repository_page_url} target="_blank">
+<a class="project-card" href={project_page.repository_page_url} target="_blank">
 	<h2>{project_page.title}</h2>
 	<p>{project_page.description}</p>
 	<div>
@@ -38,14 +38,14 @@ const { project_page } = Astro.props;
 		line-height: 2rem;
 	}
 
-	a {
+	.project-card {
 		color: black;
 		text-decoration: inherit;
 		display: block;
 		border: 0;
 		-webkit-appearance: none;
 
-		margin: 2rem;
+		// margin: 2rem;
 		padding: 0.1rem 2rem;
 
 		background: $primary_color3;
@@ -73,6 +73,3 @@ const { project_page } = Astro.props;
 	}
 </style>
 
-<script>
-	class ProjectCardC extends HTMLButtonElement {}
-</script>
