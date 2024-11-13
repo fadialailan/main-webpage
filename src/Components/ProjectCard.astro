@@ -7,20 +7,23 @@ export interface Props {
 const { project_page } = Astro.props;
 ---
 
-<a class="project-card" href={project_page.repository_page_url} target="_blank">
+<button class="project-card">
 	<h2>{project_page.title}</h2>
 	<p>{project_page.description}</p>
-	<div>
-		<p><span class="label">VCS</span> {project_page.repository_type}</p>
-		<p>
-			<span class="label">Platform</span>
-			{project_page.repository_location}
-		</p>
-		<p class="stack">
-			<span class="label">Stack</span>C++, Cmake, CLI11, ImageMagick, FMT
-		</p>
-	</div>
-</a>
+	<dialog class="full-info">
+		<div>
+			<p><span class="label">VCS</span> {project_page.repository_type}</p>
+			<p>
+				<span class="label">Platform</span>
+				{project_page.repository_location}
+			</p>
+			<p class="stack">
+				<span class="label">Stack</span>C++, Cmake, CLI11, ImageMagick,
+				FMT
+			</p>
+		</div>
+	</dialog>
+</button>
 
 <style lang="scss">
 	@import "src/styles/global";
@@ -38,15 +41,26 @@ const { project_page } = Astro.props;
 		line-height: 2rem;
 	}
 
+	.project-cards {
+		border: none;
+		background: none;
+		text-align: left;
+	}
+
 	.project-card {
 		color: black;
 		text-decoration: inherit;
 		display: block;
+		width: 100%;
 		border: 0;
-		-webkit-appearance: none;
+		text-align: left;
+		font-size: 1em;
+		font-family: inherit;
 
-		// margin: 2rem;
+		margin: 1rem;
 		padding: 0.1rem 2rem;
+
+		box-sizing: border-box;
 
 		background: $primary_color3;
 		@media (prefers-reduced-motion: no-preference) {
@@ -61,7 +75,7 @@ const { project_page } = Astro.props;
 			background: $primary_color4;
 		}
 
-		div {
+		.full-info div {
 			@media (min-width: 40em) {
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
@@ -73,3 +87,15 @@ const { project_page } = Astro.props;
 	}
 </style>
 
+<script>
+const project_cards = document.getElementsByClassName("project-card")
+for (const project_card of project_cards) {
+	const project_card_dialog = project_card.querySelector("dialog.full-info")
+	if (!project_card_dialog) {
+		continue;
+	}
+	project_card.addEventListener("click", () => {
+		project_card_dialog.showModal();
+	})
+}
+</script>
