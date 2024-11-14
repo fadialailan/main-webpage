@@ -25,10 +25,10 @@ const {class:className, ...rest} = Astro.props;
 </nav>
 
 <style lang="scss">
-	@import "src/styles/global";
+	@use "src/styles/global";
 
 	nav {
-		padding: 0.1px $side-padding;
+		padding: 0.1px global.$side-padding;
 		display: flex;
 		justify-content: space-between;
 
