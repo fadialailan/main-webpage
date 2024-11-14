@@ -7,11 +7,12 @@ export interface Props {
 const { project_page } = Astro.props;
 ---
 
-<button class="project-card">
-	<h2>{project_page.title}</h2>
-	<p>{project_page.description}</p>
-	<dialog class="full-info">
-		<button>d</button>
+<div class="project-card">
+	<button class="project-card-button">
+		<h2>{project_page.title}</h2>
+		<p>{project_page.description}</p>
+	</button>
+	<dialog class="project-card-dialog">
 		<div class="title-container">
 			<h2>{project_page.title}</h2>
 		</div>
@@ -30,7 +31,7 @@ const { project_page } = Astro.props;
 			</p>
 		</div>
 	</dialog>
-</button>
+</div>
 
 <style lang="scss">
 	@use "src/styles/global";
@@ -47,19 +48,12 @@ const { project_page } = Astro.props;
 		// display: flex
 	}
 
-
 	p.stack {
 		grid-column: span 2;
 		line-height: 2rem;
 	}
 
-	.project-cards {
-		border: none;
-		background: none;
-		text-align: left;
-	}
-
-	.project-card {
+	.project-card-button {
 		color: black;
 		text-decoration: inherit;
 		display: block;
@@ -86,50 +80,50 @@ const { project_page } = Astro.props;
 				scale: 1.1;
 			}
 		}
+	}
 
-		.full-info {
-			border: none;
-			background: global.$primary_color3;
-			border-radius: 1rem;
-			box-sizing: content-box;
-			min-width: 60rem;
-			// padding: 3rem;
-			div {
-				@media (min-width: 40em) {
-					display: grid;
-					grid-template-columns: repeat(2, 1fr);
-					p {
-						margin: 0.5rem 0;
-					}
+	.project-card-dialog {
+		border: none;
+		background: global.$primary_color3;
+		border-radius: 1rem;
+		box-sizing: content-box;
+		min-width: 60rem;
+		// padding: 3rem;
+		div {
+			@media (min-width: 40em) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				p {
+					margin: 0.5rem 0;
 				}
 			}
-			&::backdrop {
-				background: rgba(0, 0, 0, 0.6);
-				transition-duration: 100s;
-			}
-			&:hover {
-				transition-duration: 100s;
-			}
+		}
+		&::backdrop {
+			background: rgba(0, 0, 0, 0.6);
+			transition-duration: 100s;
+		}
+		&:hover {
+			transition-duration: 100s;
 		}
 	}
 </style>
 
 <script>
-	const project_cards = document.querySelectorAll<HTMLButtonElement>(
-		"button.project-card",
-	);
+	const project_cards =
+		document.querySelectorAll<HTMLDivElement>("div.project-card");
 	for (const project_card of project_cards) {
 		const project_card_dialog =
-			project_card.querySelector<HTMLDialogElement>("dialog.full-info");
-		if (!project_card_dialog) {
+			project_card.querySelector<HTMLDialogElement>("dialog.project-card-dialog");
+		const project_card_button = project_card.querySelector<HTMLButtonElement>("button.project-card-button")
+		if (!(project_card_dialog && project_card_button)) {
 			continue;
 		}
-		project_card.addEventListener("click", () => {
+		project_card_button.addEventListener("click", () => {
 			project_card_dialog.showModal();
-			project_card.classList.add("hover-disabled");
+			project_card_button.classList.add("hover-disabled");
 		});
 		project_card_dialog.addEventListener("close", () => {
-			project_card.classList.remove("hover-disabled");
+			project_card_button.classList.remove("hover-disabled");
 		});
 	}
 </script>
