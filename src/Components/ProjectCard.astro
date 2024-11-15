@@ -25,10 +25,12 @@ const { project_page } = Astro.props;
 					>{project_page.repository_location}</a
 				>
 			</p>
-			<p class="stack">
-				<span class="label">Stack</span>C++, Cmake, CLI11, ImageMagick,
-				FMT
-			</p>
+			{
+				project_page.tech_stack && (
+					<p class="stack">
+				<span class="label">Stack</span>{project_page.tech_stack.join(", ")}</p>
+				)
+			}
 		</div>
 	</dialog>
 </div>
@@ -113,8 +115,13 @@ const { project_page } = Astro.props;
 		document.querySelectorAll<HTMLDivElement>("div.project-card");
 	for (const project_card of project_cards) {
 		const project_card_dialog =
-			project_card.querySelector<HTMLDialogElement>("dialog.project-card-dialog");
-		const project_card_button = project_card.querySelector<HTMLButtonElement>("button.project-card-button")
+			project_card.querySelector<HTMLDialogElement>(
+				"dialog.project-card-dialog",
+			);
+		const project_card_button =
+			project_card.querySelector<HTMLButtonElement>(
+				"button.project-card-button",
+			);
 		if (!(project_card_dialog && project_card_button)) {
 			continue;
 		}

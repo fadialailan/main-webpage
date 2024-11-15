@@ -5,3 +5,11 @@ description: >
 repository_page_url: "https://github.com/fadialailan/pixel-art-scaler"
 repository_type: "GIT"
 repository_location: "GITHUB"
+tech_stack:
+    - C++
+    - Cmake
+    - CLI11
+    - ImageMagick
+    - FMT
+
+

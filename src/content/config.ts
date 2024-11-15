@@ -9,6 +9,7 @@ const projects_zod_type = z.object({
   repository_page_url: z.string(),
   repository_type: repository_type_z,
   repository_location: repository_location_z,
+  tech_stack: z.optional(z.array(z.string())),
 })
 
 export type ProjectCollectionType = z.infer<typeof projects_zod_type>
