@@ -17,7 +17,7 @@ const { project_page } = Astro.props;
 			<h2>{project_page.title}</h2>
 		</div>
 		<p>{project_page.description}</p>
-		<div>
+		<div class="grid-div">
 			<p><span class="label">VCS</span> {project_page.repository_type}</p>
 			<p>
 				<span class="label">Platform</span>
@@ -91,21 +91,21 @@ const { project_page } = Astro.props;
 		box-sizing: content-box;
 		min-width: 60rem;
 		// padding: 3rem;
-		div {
-			@media (min-width: 40em) {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				p {
-					margin: 0.5rem 0;
-				}
-			}
-		}
 		&::backdrop {
 			background: rgba(0, 0, 0, 0.6);
 			transition-duration: 100s;
 		}
 		&:hover {
 			transition-duration: 100s;
+		}
+	}
+	.grid-div {
+		@media (min-width: 40em) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			p {
+				margin: 0.5rem 0;
+			}
 		}
 	}
 </style>
