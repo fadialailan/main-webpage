@@ -6,5 +6,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://fadialailan.uk",
   // base: "/main-webpage",
-  integrations: [react()]
+  integrations: [react()],
 });

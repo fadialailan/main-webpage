@@ -1,0 +1,38 @@
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class="footer-padding"></div>
+<footer class={"main-footer " + className} {...rest}>
+	attribution to all material shown can be found on the attribution page.
+</footer>
+
+<style lang="scss">
+	@use "src/styles/global";
+
+	footer {
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		padding: 1rem;
+		box-sizing: border-box;
+		display: block;
+		border-top: 1px solid lightgrey;
+		background: global.$primary_color;
+	}
+</style>
+
+<script>
+	const footer = document.querySelector<HTMLElement>("footer.main-footer");
+	const footer_padding =
+		document.querySelector<HTMLDivElement>("div.footer-padding");
+	if (footer && footer_padding) {
+		console.log(footer.offsetHeight);
+		footer_padding.style.height = `${footer.offsetHeight}px`;
+	}
+</script>
