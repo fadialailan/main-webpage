@@ -1,5 +1,6 @@
 ---
-import {icon_url} from "src/scripts/links"
+import source_code_icon from "src/assets/Source-code-icon.svg";
+
 
 export interface Props {
 	title:string;
@@ -17,7 +18,7 @@ const {title, class:className, ...rest} = Astro.props;
 		<link
 			rel="icon"
 			type="image/svg+xml"
-			href={icon_url}
+			href={source_code_icon.src}
 		/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />

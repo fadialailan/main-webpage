@@ -5,6 +5,7 @@ export const base_url = import.meta.env.BASE_URL
 export const home_url = base_url + ""
 export const about_url = base_url + "about"
 export const contact_url = base_url + "contact"
+export const attribution_url = base_url + "attribution"
 export const playground_url = base_url + "playground"
 export const projects_url = base_url + "projects"
 
