@@ -15,6 +15,7 @@ const { project_page } = Astro.props;
 	<dialog class="project-card-dialog">
 		<div class="title-container">
 			<h2>{project_page.title}</h2>
+			<button>Quit</button>
 		</div>
 		<p>{project_page.description}</p>
 		<div class="grid-div">
@@ -47,7 +48,9 @@ const { project_page } = Astro.props;
 	}
 
 	.title-container {
-		// display: flex
+		display: flex;
+		justify-content: space-between;
+
 	}
 
 	p.stack {
@@ -85,7 +88,7 @@ const { project_page } = Astro.props;
 	}
 
 	.project-card-dialog {
-		border: none;
+		border: 0.5rem solid global.$primary_color2;
 		background: global.$primary_color3;
 		border-radius: 1rem;
 		box-sizing: content-box;
