@@ -1,23 +1,46 @@
 ---
 import MainLayout from "src/Layouts/MainLayout.astro";
 import source_code_icon from "src/assets/Source-code-icon.svg";
-import xmark_circle from "src/assets/xmark-circle.svg"
-import { Image } from 'astro:assets';
+import xmark_circle from "src/assets/xmark-circle.svg";
+import { Image } from "astro:assets";
 
 const icon_height = 16;
-
 ---
+
 <MainLayout title="Attribution">
 	<h1>Attribution</h1>
 	<p>
-		The favicon icon: <Image src={source_code_icon} alt="favicon" height={icon_height}/>
-is from the website: <a href="https://publicdomainvectors.org/en/free-clipart/Math-icons/81176.html">https://publicdomainvectors.org/en/free-clipart/Math-icons/81176.html</a>
+		The favicon icon: <Image
+			class="icon"
+			src={source_code_icon}
+			alt="favicon"
+			height={icon_height}
+		/>
+		is from the website: <a
+			href="https://publicdomainvectors.org/en/free-clipart/Math-icons/81176.html"
+			>https://publicdomainvectors.org/en/free-clipart/Math-icons/81176.html</a
+		>
 	</p>
-	<h2>
-		Iconoir
-	</h2>
-	<p>The icons bellow Are taken from the <a href="https://iconoir.com/">Iconoir</a> website, all are licensed under the MIT license.</p>
+	<h2>Iconoir</h2>
+	<p>
+		The icons bellow Are taken from the <a href="https://iconoir.com/"
+			>Iconoir</a
+		> website, all are licensed under the MIT license.
+	</p>
 	<ul>
-		<li>xmark-circle: <Image src={xmark_circle} alt="xmark circle" height={icon_height}/></li>
+		<li>
+			xmark-circle: <Image
+				class="icon"
+				src={xmark_circle}
+				alt="xmark circle"
+				height={icon_height}
+			/>
+		</li>
 	</ul>
 </MainLayout>
+
+<style lang="scss">
+	.icon {
+		vertical-align: sub;
+	}
+</style>
