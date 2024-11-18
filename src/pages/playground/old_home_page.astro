@@ -139,16 +139,19 @@ export const title = "Old Home Page";
 </UnstyledBaseLayout>
 
 <style lang="scss">
-	@import "src/styles/global";
+	@use "src/styles/global";
+	@use "sass:list";
 
 	.color-loop {
 		& div {
 			margin: 0;
-			padding: 1rem $side-padding;
+			padding: 1rem global.$side-padding;
 
-			@for $i from 1 through length($color_list) {
-				&:nth-child(#{length($color_list)}n + #{$i}) {
-					$color_value: var(--bgcolor, nth($color_list, $i));
+			$color_list_length: list.length(global.$color_list);
+
+			@for $i from 1 through $color_list_length {
+				&:nth-child(#{$color_list_length}n + #{$i}) {
+					$color_value: var(--bgcolor, list.nth(global.$color_list, $i));
 					background-color: $color_value;
 				}
 			}
