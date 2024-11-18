@@ -1,5 +1,7 @@
 ---
 import { type ProjectCollectionType } from "src/content/config";
+import XmarkCircle from "src/assets/xmark-circle.astro";
+
 export interface Props {
 	project_page: ProjectCollectionType;
 }
@@ -15,7 +17,8 @@ const { project_page } = Astro.props;
 	<dialog class="project-card-dialog">
 		<div class="title-container">
 			<h2>{project_page.title}</h2>
-			<button>Quit</button>
+
+			<button class="close-button">close <XmarkCircle /></button>
 		</div>
 		<p>{project_page.description}</p>
 		<div class="grid-div">
@@ -29,7 +32,9 @@ const { project_page } = Astro.props;
 			{
 				project_page.tech_stack && (
 					<p class="stack">
-				<span class="label">Stack</span>{project_page.tech_stack.join(", ")}</p>
+						<span class="label">Stack</span>
+						{project_page.tech_stack.join(", ")}
+					</p>
 				)
 			}
 		</div>
@@ -39,9 +44,23 @@ const { project_page } = Astro.props;
 <style lang="scss">
 	@use "src/styles/global";
 
+	.close-button {
+		border: none;
+		border-radius: 1rem;
+		// padding: 0px;
+		transition-property: scale, background;
+		transition-duration: 300ms;
+		font-size: 2rem;
+		:global(svg) {
+			height:2rem;
+			width:2rem;
+			vertical-align: sub;
+		}
+	}
+
 	.label {
-		color: white;
-		background-color: global.$primary_color5;
+		// color: white;
+		background-color: global.$primary_color4;
 		padding: 0.25rem;
 		border-radius: 0.5rem;
 		margin-right: 0.2rem;
@@ -50,7 +69,7 @@ const { project_page } = Astro.props;
 	.title-container {
 		display: flex;
 		justify-content: space-between;
-
+		align-items: center;
 	}
 
 	p.stack {
@@ -125,9 +144,14 @@ const { project_page } = Astro.props;
 			project_card.querySelector<HTMLButtonElement>(
 				"button.project-card-button",
 			);
-		if (!(project_card_dialog && project_card_button)) {
+		const project_card_close_button = 
+			project_card.querySelector<HTMLButtonElement>("button.close-button")
+		if (!(project_card_dialog && project_card_button && project_card_close_button)) {
 			continue;
 		}
+		project_card_close_button.addEventListener("click", () => {
+			project_card_dialog.close();
+		})
 		project_card_button.addEventListener("click", () => {
 			project_card_dialog.showModal();
 			project_card_button.classList.add("hover-disabled");
