@@ -51,6 +51,14 @@ const { project_page } = Astro.props;
 		transition-property: scale, background;
 		transition-duration: 300ms;
 		font-size: 2rem;
+
+		background: global.$primary_color2;
+		&:hover {
+			background: global.$primary_color4;
+		}
+		&:active {
+			background: global.$primary_color5;
+		}
 		:global(svg) {
 			height:2rem;
 			width:2rem;
@@ -98,10 +106,18 @@ const { project_page } = Astro.props;
 			transition-property: background, border-radius, scale;
 			transition-duration: 300ms;
 		}
-		&:not(.hover-disabled):hover {
-			background: global.$primary_color4;
-			@media (prefers-reduced-motion: no-preference) {
-				scale: 1.1;
+		&:not(.hover-disabled){
+			&:hover {
+				background: global.$primary_color4;
+				@media (prefers-reduced-motion: no-preference) {
+					scale: 1.1;
+				}
+			}
+			&:active {
+				background: global.$primary_color5;
+				@media (prefers-reduced-motion: no-preference) {
+					scale: 1.02;
+				}
 			}
 		}
 	}
