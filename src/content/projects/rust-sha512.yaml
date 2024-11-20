@@ -1,0 +1,11 @@
+title: "Rust sha512"
+description: >
+    an implementation of the sha512 checksum algorithim in rust
+
+repository_page_url: "https://github.com/fadialailan/rust-sha512"
+repository_type: "GIT"
+repository_location: "GITHUB"
+tech_stack:
+    - rust
+
+
