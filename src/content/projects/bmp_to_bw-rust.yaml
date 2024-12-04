@@ -1,0 +1,11 @@
+title: "bmp_to_bw-rust"
+description: >
+    a program that takes an uncompessed bmp image and outputs a greyscale version of it
+
+repository_page_url: "https://github.com/fadialailan/bmp_to_bw-rust"
+repository_type: "GIT"
+repository_location: "GITHUB"
+tech_stack:
+    - rust
+
+
