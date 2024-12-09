@@ -7,4 +7,5 @@ export default defineConfig({
   site: "https://fadialailan.uk",
   // base: "/main-webpage",
   integrations: [react()],
+  prefetch: true,
 });

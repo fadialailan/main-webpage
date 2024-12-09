@@ -25,7 +25,7 @@ const playground_pages: AstroPlaygroundPage[] = (await Astro.glob("./*.astro")) 
 				.map((value) => {
 					return (
 						<div class="row-div">
-							<a href={value.url}>{value.title}</a>
+							<a data-astro-prefetch href={value.url}>{value.title}</a>
 							<span>
 								{value.creation_date.toLocaleDateString()}
 							</span>

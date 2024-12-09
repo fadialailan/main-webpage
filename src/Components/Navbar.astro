@@ -13,14 +13,14 @@ const {class:className, ...rest} = Astro.props;
 
 <nav class={className} {...rest}>
 	<ul>
-		<li><a href={home_url}>Home</a></li>
-		<li><a href={about_url}>About</a></li>
-		<li><a href={contact_url}>Contact</a></li>
-		<li><a href={attribution_url}>Attribution</a></li>
-		<li><a href={playground_url}>Playground</a></li>
-		<li><a href={projects_url}>Projects</a></li>
+		<li><a data-astro-prefetch href={home_url}>Home</a></li>
+		<li><a data-astro-prefetch href={about_url}>About</a></li>
+		<li><a data-astro-prefetch href={contact_url}>Contact</a></li>
+		<li><a data-astro-prefetch href={attribution_url}>Attribution</a></li>
+		<li><a data-astro-prefetch href={playground_url}>Playground</a></li>
+		<li><a data-astro-prefetch href={projects_url}>Projects</a></li>
 		<li>
-			<a href={cv_url} target="_blank" rel="noopener noreferrer">CV</a>
+			<a data-astro-prefetch href={cv_url} target="_blank" rel="noopener noreferrer">CV</a>
 		</li>
 	</ul>
 </nav>
