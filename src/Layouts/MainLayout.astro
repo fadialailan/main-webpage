@@ -15,6 +15,7 @@ const { title } = Astro.props;
 	class="page-class"
 	navbar_class="navbar-class"
 >
+	<slot name="in-head" slot="in-head"/>
 	<slot />
 	<MainFooter/>
 </UnstyledBaseLayout>
