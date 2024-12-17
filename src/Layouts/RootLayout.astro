@@ -1,16 +1,24 @@
 ---
 import source_code_icon from "src/assets/Source-code-icon.svg";
+import { SEO } from "astro-seo";
+
 
 export interface Props {
 	title: string;
+	description?: string;
 	class?: string;
 }
-const { title, class: className, ...rest } = Astro.props;
+const { title, description, class: className, ...rest } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
+		<SEO
+			title={title}
+			description={description}
+			charset="utf-8"
+		/>
+
 		<!-- credit to: https://publicdomainvectors.org/en/free-clipart/Math-icons/81176.html  -->
 		<!-- <link rel="icon" type="image/svg+xml" href={source_code_icon.src} /> -->
 		<link
@@ -32,8 +40,6 @@ const { title, class: className, ...rest } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 
-		<slot name="in-head" />
-
 		<!-- fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,7 +48,6 @@ const { title, class: className, ...rest } = Astro.props;
 			rel="stylesheet"
 		/>
 
-		<title>{title}</title>
 	</head>
 	<body class={className} {...rest}>
 		<slot />

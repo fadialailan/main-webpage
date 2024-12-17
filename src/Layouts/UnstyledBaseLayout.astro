@@ -4,16 +4,18 @@ import Navbar from 'src/Components/Navbar.astro';
 
 export interface Props {
 	title:string;
+	description?: string;
 	class?:string;
 	navbar_class?:string;
 	main_slot_class?:string;
 }
 
-const {title, class:className, navbar_class, main_slot_class, ...rest} = Astro.props;
+const {title, description, class:className, navbar_class, main_slot_class, ...rest} = Astro.props;
+
 
 ---
 
-<RootLayout class={className} title={title} {...rest}>
+<RootLayout class={className} title={title} description={description} {...rest}>
 	<Navbar class={navbar_class} {...rest}/>
 	<div class={main_slot_class} {...rest}>
 		<slot class={main_slot_class}/>
