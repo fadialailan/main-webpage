@@ -10,7 +10,12 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "strict": true,
-    "strictNullChecks":true
+    "strictNullChecks":true,
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ]
 
   }
 }
